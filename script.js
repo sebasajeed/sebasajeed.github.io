@@ -10,6 +10,7 @@ const typingElement = document.getElementById('typing-animation');
 
 function typeText() {
   const current = textArray[typingIndex];
+
   if (!isDeleting) {
     typingElement.textContent = current.substring(0, charIndex + 1);
     charIndex++;
@@ -28,41 +29,47 @@ function typeText() {
   }
   setTimeout(typeText, isDeleting ? deletingSpeed : typingSpeed);
 }
-document.addEventListener('DOMContentLoaded', typeText);
+document.addEventListener("DOMContentLoaded", typeText);
 
-// Scroll fade toggle
-window.addEventListener('scroll', () => {
-  const header = document.getElementById('main-header');
-  const headerName = document.getElementById('header-name');
-  const headerNav  = document.getElementById('header-nav');
-  const heroName   = document.getElementById('hero-name');
-  const heroNav    = document.getElementById('hero-nav');
-  const heroSubtitle = document.getElementById('typing-animation');
+// Scroll fade toggle (header behavior)
+window.addEventListener("scroll", () => {
+  const header = document.getElementById("main-header");
+  const headerName = document.getElementById("header-name");
+  const headerNav = document.getElementById("header-nav");
+  const heroName = document.getElementById("hero-name");
+  const heroNav = document.getElementById("hero-nav");
+  const heroSubtitle = document.getElementById("typing-animation");
 
-  if (window.scrollY > window.innerHeight * 0.6) {
-    header.classList.add('scrolled');
+  if (window.scrollY > 120) {
+    header.classList.add("scrolled");
     headerName.style.opacity = 1;
     headerNav.style.opacity = 1;
+
     heroName.style.opacity = 0;
     heroNav.style.opacity = 0;
     heroSubtitle.style.opacity = 0;
   } else {
-    header.classList.remove('scrolled');
+    header.classList.remove("scrolled");
     headerName.style.opacity = 0;
     headerNav.style.opacity = 0;
+
     heroName.style.opacity = 1;
     heroNav.style.opacity = 1;
     heroSubtitle.style.opacity = 1;
   }
 });
 
-//============Mobile Menu Toggle=====================
+// Mobile menu toggle
 function toggleMenu() {
   document.getElementById("header-nav").classList.toggle("show");
 }
 
-//============ Close menu when scrolling (mobile) ============
-window.addEventListener('scroll', () => {
-  document.getElementById("header-nav").classList.remove("show");
-});
+// Close menu when scrolling downward
+let lastScrollY = window.scrollY;
 
+window.addEventListener("scroll", () => {
+  if (window.scrollY > lastScrollY + 10) {
+    document.getElementById("header-nav").classList.remove("show");
+  }
+  lastScrollY = window.scrollY;
+});
