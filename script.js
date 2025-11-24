@@ -1,4 +1,4 @@
-// === HERO FADE ON SCROLL ===
+// Hero fade on scroll
 window.addEventListener("scroll", () => {
   const hero = document.getElementById("hero");
   const scrollY = window.scrollY;
@@ -17,14 +17,15 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// === HAMBURGER MENU TOGGLE ===
+// Toggle mobile menu
 function toggleMenu() {
   const nav = document.getElementById("header-nav");
   nav.classList.toggle("active");
 }
 
-// === TYPING ANIMATION ===
+// Typing animation
 const typingElement = document.getElementById("typing-animation");
+
 const typingTexts = [
   "ARM CPU Simulator Developer",
   "Full-Stack Web Developer",
@@ -46,21 +47,20 @@ function type() {
     typingElement.textContent = currentText.substring(0, charIndex++);
   }
 
-  let typingSpeed = isDeleting ? 50 : 120;
+  let speed = isDeleting ? 50 : 120;
 
   if (!isDeleting && charIndex === currentText.length) {
-    typingSpeed = 1500; // Pause at full word
+    speed = 1500;
     isDeleting = true;
+
   } else if (isDeleting && charIndex === 0) {
     isDeleting = false;
     typingIndex = (typingIndex + 1) % typingTexts.length;
     currentText = typingTexts[typingIndex];
-    typingSpeed = 300;
+    speed = 300;
   }
 
-  setTimeout(type, typingSpeed);
+  setTimeout(type, speed);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  type();
-});
+document.addEventListener("DOMContentLoaded", type);
