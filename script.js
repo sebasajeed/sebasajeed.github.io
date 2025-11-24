@@ -31,52 +31,53 @@ function typeText() {
 }
 document.addEventListener("DOMContentLoaded", typeText);
 
-// Scroll fade toggle (header behavior)
-window.addEventListener("scroll", () => {
-  const header = document.getElementById("main-header");
-  const headerName = document.getElementById("header-name");
-  const headerNav = document.getElementById("header-nav");
-  const heroName = document.getElementById("hero-name");
-  const heroNav = document.getElementById("hero-nav");
-  const heroSubtitle = document.getElementById("typing-animation");
 
-  // fade logic
+// ---------------- Fading Header on Scroll ----------------
+
+let lastScrollY = 0;
+
+window.addEventListener("scroll", () => {
+  const header     = document.getElementById("main-header");
+  const headerName = document.getElementById("header-name");
+  const headerNav  = document.getElementById("header-nav");
+  const heroName   = document.getElementById("hero-name");
+  const heroNav    = document.getElementById("hero-nav");
+  const heroSub    = document.getElementById("typing-animation");
+
   if (window.scrollY > 120) {
     header.classList.add("scrolled");
     headerName.style.opacity = 1;
-    headerNav.style.opacity = 1;
+    headerNav.style.opacity  = 1;
 
     heroName.style.opacity = 0;
-    heroNav.style.opacity = 0;
-    heroSubtitle.style.opacity = 0;
+    heroNav.style.opacity  = 0;
+    heroSub.style.opacity  = 0;
+
   } else {
     header.classList.remove("scrolled");
     headerName.style.opacity = 0;
-    headerNav.style.opacity = 0;
+    headerNav.style.opacity  = 0;
 
     heroName.style.opacity = 1;
-    heroNav.style.opacity = 1;
-    heroSubtitle.style.opacity = 1;
+    heroNav.style.opacity  = 1;
+    heroSub.style.opacity  = 1;
   }
 
-  // close menu when scrolling down
-  if (window.scrollY > lastScrollY + 10) {
+  // Close mobile menu on scroll down
+  if (window.scrollY > lastScrollY + 8) {
     document.getElementById("header-nav").classList.remove("show");
   }
+
   lastScrollY = window.scrollY;
 });
 
-// Mobile menu toggle
+
+// ---------------- Mobile Menu ----------------
+
 function toggleMenu() {
   document.getElementById("header-nav").classList.toggle("show");
 }
 
-// Close menu when scrolling downward
-let lastScrollY = window.scrollY;
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > lastScrollY + 10) {
-    document.getElementById("header-nav").classList.remove("show");
-  }
-  lastScrollY = window.scrollY;
-});
+function closeMenu() {
+  document.getElementById("header-nav").classList.remove("show");
+}

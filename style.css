@@ -1,11 +1,11 @@
 /* RESET */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+
 body {
   font-family: Arial, sans-serif;
   color: #fff;
 
-  /* Organic animated gradient */
   background: radial-gradient(at 20% 20%, #ddd9f6, transparent 20%),
               radial-gradient(at 80% 30%, #dccaf9, transparent 20%),
               radial-gradient(at 30% 70%, #f3c094, transparent 20%),
@@ -14,14 +14,14 @@ body {
   background-size: 200% 200%;
   background-attachment: fixed;
   animation: gradientFloat 25s ease-in-out infinite alternate;
-  overflow-x: hidden;
 }
 
+/* Gradient animation */
 @keyframes gradientFloat {
-  0% { background-position: 0% 0%; }
-  25% { background-position: 50% 30%; }
-  50% { background-position: 100% 60%; }
-  75% { background-position: 40% 90%; }
+  0%   { background-position: 0% 0%; }
+  25%  { background-position: 50% 30%; }
+  50%  { background-position: 100% 60%; }
+  75%  { background-position: 40% 90%; }
   100% { background-position: 0% 50%; }
 }
 
@@ -32,7 +32,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 100px 0;
 }
 
 /* HEADER */
@@ -43,7 +42,7 @@ body {
   width: 100%;
   z-index: 1000;
   background: transparent;
-  transition: background 0.6s ease, opacity 0.3s ease;
+  transition: background 0.6s ease;
 }
 
 #main-header.scrolled {
@@ -58,105 +57,79 @@ body {
   padding: 1rem 2rem;
 }
 
+#header-name { opacity: 0; transition: opacity .3s; }
+#header-nav  { opacity: 0; transition: opacity .3s; }
+
 #header-name a {
+  text-decoration: none;
+  color: white;
   font-size: 1.2rem;
   font-weight: 700;
-  color: #fff;
-  text-decoration: none;
 }
 
-#header-name { opacity: 0; transition: opacity .3s; }
-#header-nav { opacity: 0; transition: opacity .3s; }
-
-#main-header nav ul {
-  list-style: none;
+/* Desktop nav */
+#header-nav ul {
   display: flex;
   gap: 22px;
+  list-style: none;
 }
 
-#main-header nav ul li a {
-  color: #fff;
+#header-nav ul li a {
+  color: white;
   text-decoration: none;
-  font-size: .95rem;
   font-weight: bold;
 }
-#main-header nav ul li a:hover { color: #FFD369; }
 
 /* HERO */
 #hero { min-height: 100vh; display: flex; align-items: center; text-align: center; }
-.hero-content { width: 100%; }
-.hero-name { font-size: 5.5rem; font-weight: 800; transition: opacity .3s; }
+.hero-name { font-size: 5rem; font-weight: 800; }
+.hero-nav ul { display: flex; gap: 26px; list-style: none; }
+.hero-subtitle { font-size: 1.2rem; margin-top: 12px; }
 
-.hero-nav { margin-top: 14px; transition: opacity .3s; }
-.hero-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 26px;
-  justify-content: center;
-}
-
-.hero-subtitle {
-  margin-top: 14px;
-  font-size: 1.2rem;
-  color: #eaeaea;
-  min-height: 28px;
-  transition: opacity .3s;
-}
-
-/* HAMBURGER MENU */
+/* HAMBURGER */
 .hamburger {
   display: none;
   font-size: 28px;
   cursor: pointer;
-  position: absolute;
-  right: 20px;
-  top: 18px;
-  color: #fff;
-  z-index: 2000;
 }
 
-/* ------------ MOBILE NAV ------------ */
+/* ----------------- MOBILE ------------------ */
 @media (max-width: 768px) {
 
-  /* Hide hero nav (we use header nav instead) */
-  #hero-nav {
-    display: none !important;
+  /* Hide hero nav on mobile */
+  #hero-nav { display: none !important; }
+
+  /* Force header menu visible */
+  #header-nav {
+    opacity: 1 !important;
   }
 
-  /* Hide menu by default on mobile */
   #header-nav ul {
     display: none;
     flex-direction: column;
     background: rgba(0,0,0,0.45);
     backdrop-filter: blur(12px);
-    border-radius: 12px;
     padding: 14px 20px;
+    border-radius: 10px;
     position: absolute;
     right: 20px;
     top: 72px;
-    width: 180px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    width: 170px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.35);
   }
 
-  /* Show hamburger */
-  .hamburger {
-    display: block;
-  }
-
-  /* When toggled */
   #header-nav.show ul {
     display: flex;
   }
-}
 
-  #header-nav {
-  opacity: 1 !important;
+  .hamburger {
+    display: block;
+  }
 }
-
 
 /* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0,0,0,0.3);
 }
