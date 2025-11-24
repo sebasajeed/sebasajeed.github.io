@@ -40,6 +40,7 @@ window.addEventListener("scroll", () => {
   const heroNav = document.getElementById("hero-nav");
   const heroSubtitle = document.getElementById("typing-animation");
 
+  // fade logic
   if (window.scrollY > 120) {
     header.classList.add("scrolled");
     headerName.style.opacity = 1;
@@ -57,6 +58,12 @@ window.addEventListener("scroll", () => {
     heroNav.style.opacity = 1;
     heroSubtitle.style.opacity = 1;
   }
+
+  // close menu when scrolling down
+  if (window.scrollY > lastScrollY + 10) {
+    document.getElementById("header-nav").classList.remove("show");
+  }
+  lastScrollY = window.scrollY;
 });
 
 // Mobile menu toggle

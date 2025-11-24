@@ -149,6 +149,11 @@ body {
   }
 }
 
+  #header-nav {
+  opacity: 1 !important;
+}
+
+
 /* FOOTER */
 footer {
   text-align: center;
