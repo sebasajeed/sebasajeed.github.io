@@ -12,20 +12,29 @@
 </head>
 <body>
   <!-- Sticky Header -->
-  <header id="main-header">
-    <div class="container">
-      <h1 id="header-name"><a href="#hero">Seba Parackal</a></h1>
-      <nav id="header-nav">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="resume.pdf" target="_blank" class="resume-button">Resume</a></li>
-        </ul>
-      </nav>
+ <!-- Sticky Header -->
+<header id="main-header">
+  <div class="container">
+    <h1 id="header-name"><a href="#hero">Seba Parackal</a></h1>
+
+    <!-- Hamburger (mobile only) -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fa-solid fa-bars"></i>
     </div>
-  </header>
+
+    <nav id="header-nav">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="resume.pdf" target="_blank" class="resume-button">Resume</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
 
   <!-- HERO -->
   <section id="hero">
@@ -165,5 +174,12 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("header-nav").classList.toggle("show");
+    }
+</script>
+
 </body>
 </html>

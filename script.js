@@ -55,3 +55,8 @@ window.addEventListener('scroll', () => {
     heroSubtitle.style.opacity = 1;
   }
 });
+
+//============Mobile Menu Toggle=====================
+function toggleMenu() {
+  document.getElementById("header-nav").classList.toggle("show");
+}
