@@ -279,4 +279,33 @@ footer {
   #header-nav ul li a:hover {
     color: #FFD369;
   }
+
+}
+
+/* ================================
+   FINAL FIXES
+   ================================ */
+
+/* Hide hamburger on desktop */
+.hamburger {
+  display: none !important;
+}
+
+/* Mobile fixes */
+@media (max-width: 768px) {
+
+  /* show hamburger */
+  .hamburger {
+    display: block !important;
+  }
+
+  /* ensure menu is visible */
+  #header-nav {
+    opacity: 1 !important;
+  }
+
+  /* remove background override that killed gradient */
+  #hero {
+    background: none !important;
+  }
 }

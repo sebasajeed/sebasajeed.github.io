@@ -60,3 +60,9 @@ window.addEventListener('scroll', () => {
 function toggleMenu() {
   document.getElementById("header-nav").classList.toggle("show");
 }
+
+//============ Close menu when scrolling (mobile) ============
+window.addEventListener('scroll', () => {
+  document.getElementById("header-nav").classList.remove("show");
+});
+
