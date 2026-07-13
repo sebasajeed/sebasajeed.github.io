@@ -77,8 +77,8 @@ const projects: Project[] = [
   },
   {
     title: "FinTrack",
-    description: "privacy-first finance tracker for encrypted personal finance records",
-    tags: ["privacy", "encryption", "finance"],
+    description: "FastAPI and PostgreSQL finance tracker with encrypted personal records",
+    tags: ["fastapi", "postgresql", "encryption"],
     href: "https://sebaparackal.com/fintrack/",
     linkLabel: "open FinTrack",
     mark: "$",
@@ -86,8 +86,8 @@ const projects: Project[] = [
       label: "full-stack app",
       title: "Encrypted personal finance records, made easier to review",
       detail:
-        "FinTrack is a privacy-first finance tracker for spending, income, investments, accounts, and net worth. It uses a browser-encrypted vault model, supports CSV and PDF statement import workflows, and turns financial history into plain-language signals about recurring costs, portfolio movement, category patterns, and habits shaping net worth.",
-      points: ["browser-encrypted vault", "CSV/PDF imports", "AI-powered insights"],
+        "FinTrack is a privacy-first finance tracker for spending, income, investments, accounts, and net worth. The backend is a FastAPI and PostgreSQL API with encrypted finance-vault storage, email/password authentication, HTTP-only cookie sessions, SQLAlchemy models, Alembic migrations, and Pytest coverage. It supports CSV and PDF statement import workflows and turns financial history into plain-language signals about recurring costs, portfolio movement, category patterns, and habits shaping net worth.",
+      points: ["FastAPI + PostgreSQL", "encrypted vault storage", "CSV/PDF imports"],
     },
   },
   {
