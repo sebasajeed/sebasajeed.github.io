@@ -77,16 +77,17 @@ const projects: Project[] = [
   },
   {
     title: "FinTrack",
-    description: "privacy-first finance tracker with dashboard and import flows",
-    tags: ["react", "privacy", "finance"],
+    description: "privacy-first finance tracker for encrypted personal finance records",
+    tags: ["privacy", "encryption", "finance"],
     href: "https://sebaparackal.com/fintrack/",
     linkLabel: "open FinTrack",
     mark: "$",
     preview: {
       label: "full-stack app",
-      title: "Private finance tracking with clearer review flows",
-      detail: "FinTrack helps review spending, income, accounts, and imports with a privacy-first browser experience.",
-      points: ["browser-encrypted vault", "dashboard views", "statement imports"],
+      title: "Encrypted personal finance records, made easier to review",
+      detail:
+        "FinTrack is a privacy-first finance tracker for spending, income, investments, accounts, and net worth. It uses a browser-encrypted vault model, supports CSV and PDF statement import workflows, and turns financial history into plain-language signals about recurring costs, portfolio movement, category patterns, and habits shaping net worth.",
+      points: ["browser-encrypted vault", "CSV/PDF imports", "AI-powered insights"],
     },
   },
   {
@@ -241,8 +242,9 @@ function AboutPage() {
       </p>
       <div className="about-panel">
         <p>
-          More about my background, coursework, interests, and working style will live here. For now, this page is set up
-          as a clean place to expand the portfolio without changing the work page.
+          I like building products that make complicated workflows easier to understand. Right now, I am focused on
+          full-stack apps, developer tools, systems projects, and the kind of engineering details that make software feel
+          reliable in daily use.
         </p>
       </div>
     </section>
