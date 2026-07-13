@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seba Parackal</title>
+    <script>
+      var path = window.location.pathname.replace(/\/$/, "");
+      if (path === "/about") {
+        window.location.replace("/?path=/about");
+      } else {
+        window.location.replace("/");
+      }
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to <a href="/">Seba Parackal's portfolio</a>.</p>
+  </body>
+</html>
