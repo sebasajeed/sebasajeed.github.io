@@ -77,16 +77,16 @@ const projects: Project[] = [
   },
   {
     title: "FinTrack",
-    description: "flask and mysql dashboard for spending, categories, and budget charts",
-    tags: ["flask", "mysql", "charts"],
+    description: "privacy-first finance tracker with dashboard and import flows",
+    tags: ["react", "privacy", "finance"],
     href: "https://sebaparackal.com/fintrack/",
     linkLabel: "open FinTrack",
     mark: "$",
     preview: {
       label: "full-stack app",
-      title: "Budgeting with visible patterns",
-      detail: "A Flask and MySQL tracker for categories, budgets, and spending charts.",
-      points: ["database schema", "dashboard views", "category insights"],
+      title: "Private finance tracking with clearer review flows",
+      detail: "FinTrack helps review spending, income, accounts, and imports with a privacy-first browser experience.",
+      points: ["browser-encrypted vault", "dashboard views", "statement imports"],
     },
   },
   {
